@@ -32,10 +32,10 @@ int main(int argc, char** argv) {
     
     
     //Output data
-    cout<<"Every year, the ocean level rises 1.5mm."<<endl;
-    cout<<"     After 5 years, the ocean rise   = "<<year5<<"mm"<<endl;
-    cout<<"     After 7 years, the ocean rise   = "<<year7<< "mm"<<endl;
-    cout<<"     After 10 years, the ocean rise  = "<<year10<<"mm"<<endl;
+    cout<<"Every year, the ocean level rises 1.5 mm."<<endl;
+    cout<<"     After 5 years, the ocean rise = "<<year5<<" mm"<<endl;
+    cout<<"     After 7 years, the ocean rise = "<<year7<< " mm"<<endl;
+    cout<<"     After 10 years, the ocean rise = "<<year10<<" mm"<<endl;
     
     //Exit Stage Right!
     return 0;

@@ -28,9 +28,9 @@ int main(int argc, char** argv) {
     revenue=sales*percent;
     
     //Output data
-    cout<<"Total sales this year          = "<<sales<<endl;
-    cout<<"Percentage of sales generate   = "<<percent*100<<"%"<<endl;
-    cout<<"Total revenue this year        = "<<revenue<<endl;
+    cout<<"Total sales this year        = $"<<sales<<endl;
+    cout<<"Percentage of sales generate = "<<percent*100<<"%"<<endl;
+    cout<<"Total revenue this year      = $"<<revenue<<endl;
     
     //Exit Stage Right!
     return 0;

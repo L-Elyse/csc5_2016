@@ -6,8 +6,9 @@
  */
 
 //System Libraries
-#include <iostream>//Input/Output Stream Library
-using namespace std;//Iostream uses the standard namespace
+#include <iostream>  //Input/Output Stream Library
+#include <iomanip>   //Format Library
+using namespace std; //Iostream uses the standard namespace
 
 //User Libraries
 
@@ -27,21 +28,16 @@ int main(int argc, char** argv) {
     
     //Process data
     tax=tax*mealcst;
-    int taxpenn=tax*100+0.5;     //Shift into pennies add a half to round up
-    tax=taxpenn/100.0f;
     tip=(tax+mealcst)*tip;
-    int tippenn=tip*100+0.5;     //Shift into pennies add a half to round up
-    tip=tippenn/100.0f;
     totalbl=mealcst+tax+tip;
-    int bilpenn=totalbl*100+0.5; //Shift into pennies add a half to round up
-    totalbl=bilpenn/100.0f;
     
     
     //Output data
-    cout<<"The meal cost  = $"<<mealcst<<endl;
-    cout<<"The tax amount = $"<<tax<<endl;
-    cout<<"The tip amount = $"<<tip<<endl;
-    cout<<"The total bill = $"<<totalbl<<endl;
+    cout<<fixed<<setprecision(2)<<showpoint;
+    cout<<"The Meal Cost  = $"<<setw(7)<<mealcst<<endl;
+    cout<<"The Tax Amount = $"<<setw(7)<<tax<<endl;
+    cout<<"The Tip Amount = $"<<setw(7)<<tip<<endl;
+    cout<<"The Total Bill = $"<<setw(7)<<totalbl<<endl;
     
     //Exit Stage Right!
     return 0;

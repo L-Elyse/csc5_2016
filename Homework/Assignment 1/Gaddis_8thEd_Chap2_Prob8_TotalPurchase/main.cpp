@@ -6,8 +6,9 @@
  */
 
 //System Libraries
-#include <iostream>//Input/Output Stream Library
-using namespace std;//Iostream uses the standard namespace
+#include <iostream>  //Input/Output Stream Library
+#include <iomanip>   //Format Library
+using namespace std; //Iostream uses the standard namespace
 
 //User Libraries
 
@@ -31,19 +32,14 @@ int main(int argc, char** argv) {
     
     //Process data
     subtotl=item1+item2+item3+item4+item5;
-    int pennies1=subtotl*100+0.5;  //Shift into pennies add a half to round up
-    subtotl=pennies1/100.0f;
     tax=tax*subtotl;
-    int pennies2=tax*100+0.5;      //Shift into pennies add a half to round up
-    tax=pennies2/100.0f;
     total=subtotl+tax;
-    int pennies3=total*100+0.5;    //Shift into pennies add a half to round up
-    total=pennies3/100.0f;
     
     //Output data
-    cout<<"The subtotal of the sale is = $"<<subtotl<<endl;
-    cout<<"The tax on the sale is      = $"<<tax<<endl;
-    cout<<"The total of the sale is    = $"<<total<<endl;
+    cout<<fixed<<setprecision(2)<<showpoint;
+    cout<<"The subtotal of the sale is = $"<<setw(5)<<subtotl<<endl;
+    cout<<"The tax on the sale is      = $"<<setw(5)<<tax<<endl;
+    cout<<"The total of the sale is    = $"<<setw(5)<<total<<endl;
     
     //Exit Stage Right!
     return 0;
