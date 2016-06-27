@@ -1,8 +1,8 @@
 /* 
  * File:   main.cpp
  * Author: Laurie Guimont
- * Created on June 20, 2016, 12:27 PM
- * Purpose: First Program
+ * Created on June 27, 2016, 12:05 PM
+ * Purpose: Truth Table
  */
 
 //System Libraries
@@ -36,8 +36,63 @@ int main(int argc, char** argv) {
     cout<<(y? 'T':'F')<<"  ";
     cout<<(!x?'T':'F')<<"  ";
     cout<<(!y?'T':'F')<<"  ";
-    cout<<(x||y?'T':'F')<<"  ";
-    cout<<(x&&y?'T':'F')<<"       ";
+    cout<<(x||y?'T':'F')<<"    ";
+    cout<<(x&&y?'T':'F')<<"    ";
+    cout<<(x^y?'T':'F')<<"    ";
+    cout<<(x^y^y?'T':'F')<<"     ";
+    cout<<(x^y^x?'T':'F')<<"      ";
+    cout<<(!(x||y)?'T':'F')<<"       ";
+    cout<<(!x&&!y?'T':'F')<<"      ";
+    cout<<(!(x&&y)?'T':'F')<<"      ";
+    cout<<(!x||!y?'T':'F')<<endl;
+    
+    //Second Row
+    x=true;y=false;
+    cout<<(x?'T':'F')<<" ";
+    cout<<(y? 'T':'F')<<"  ";
+    cout<<(!x?'T':'F')<<"  ";
+    cout<<(!y?'T':'F')<<"  ";
+    cout<<(x||y?'T':'F')<<"    ";
+    cout<<(x&&y?'T':'F')<<"    ";
+    cout<<(x^y?'T':'F')<<"    ";
+    cout<<(x^y^y?'T':'F')<<"     ";
+    cout<<(x^y^x?'T':'F')<<"      ";
+    cout<<(!(x||y)?'T':'F')<<"       ";
+    cout<<(!x&&!y?'T':'F')<<"      ";
+    cout<<(!(x&&y)?'T':'F')<<"      ";
+    cout<<(!x||!y?'T':'F')<<endl;
+    
+    //Third Row
+    x=false;y=true;
+    cout<<(x?'T':'F')<<" ";
+    cout<<(y? 'T':'F')<<"  ";
+    cout<<(!x?'T':'F')<<"  ";
+    cout<<(!y?'T':'F')<<"  ";
+    cout<<(x||y?'T':'F')<<"    ";
+    cout<<(x&&y?'T':'F')<<"    ";
+    cout<<(x^y?'T':'F')<<"    ";
+    cout<<(x^y^y?'T':'F')<<"     ";
+    cout<<(x^y^x?'T':'F')<<"      ";
+    cout<<(!(x||y)?'T':'F')<<"       ";
+    cout<<(!x&&!y?'T':'F')<<"      ";
+    cout<<(!(x&&y)?'T':'F')<<"      ";
+    cout<<(!x||!y?'T':'F')<<endl;
+    
+    //Fourth Row
+    x=false;y=false;
+    cout<<(x?'T':'F')<<" ";
+    cout<<(y? 'T':'F')<<"  ";
+    cout<<(!x?'T':'F')<<"  ";
+    cout<<(!y?'T':'F')<<"  ";
+    cout<<(x||y?'T':'F')<<"    ";
+    cout<<(x&&y?'T':'F')<<"    ";
+    cout<<(x^y?'T':'F')<<"    ";
+    cout<<(x^y^y?'T':'F')<<"     ";
+    cout<<(x^y^x?'T':'F')<<"      ";
+    cout<<(!(x||y)?'T':'F')<<"       ";
+    cout<<(!x&&!y?'T':'F')<<"      ";
+    cout<<(!(x&&y)?'T':'F')<<"      ";
+    cout<<(!x||!y?'T':'F')<<endl;
   
     
     //Exit Stage Right!
