@@ -26,7 +26,7 @@ int main(int argc, char** argv) {
     //Input data
     cout<<"Loan Calculator for Equal Monthly Payments"<<endl;
     cout<<"Input all 3 at once"<<endl;
-    cout<<"Loan Amt $'s, Interest Rate %, Number of Monthly Payments"<<endl;
+    cout<<"Loan Amt $'s, Interest Rate %/month, Number of Monthly Payments"<<endl;
     cin>>loanAmt>>intRate>>nPymnts;
     
     //Process data
