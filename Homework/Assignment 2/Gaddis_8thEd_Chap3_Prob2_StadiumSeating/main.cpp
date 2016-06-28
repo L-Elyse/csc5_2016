@@ -19,12 +19,12 @@ using namespace std;//Iostream uses the standard namespace
 //Execution Begins Here!
 int main(int argc, char** argv) {
     //Declare variables, no doubles
-    int classA=15;   //Price of seats in class A
-    int classB=12;   //Price of seats in class B
-    int classC=9;    //Price of seats in class C
-    int seatsA,seatsB,seatsC;       //Number of seats sold per section
-    int incomeA,incomeB,incomeC;  //Income by class
-    int total;       //Total income
+    float classA=15;               //Price of seats in class A
+    float classB=12;               //Price of seats in class B
+    float classC=9;                //Price of seats in class C
+    float seatsA,seatsB,seatsC;    //Number of seats sold per section
+    float incomeA,incomeB,incomeC; //Income by class
+    float total;                   //Total income
     
     //Input data
     cout<<"How many seats were sold in class A?"<<endl;
@@ -41,11 +41,11 @@ int main(int argc, char** argv) {
     total=incomeA+incomeB+incomeC;
     
     //Output data
-    cout<<fixed<<setprecision(6)<<showpoint;
-    cout<<"Amount of income from class A = $"<<setw(7)<<incomeA<<endl;
-    cout<<"Amount of income from class B = $"<<incomeB<<endl;
-    cout<<"Amount of income from class C = $"<<incomeC<<endl;
-    cout<<"Total amount of ticket sales = $"<<total<<endl;
+    cout<<fixed<<setprecision(2)<<showpoint;
+    cout<<"Amount of income from class A = $"<<setw(8)<<incomeA<<endl;
+    cout<<"Amount of income from class B = $"<<setw(8)<<incomeB<<endl;
+    cout<<"Amount of income from class C = $"<<setw(8)<<incomeC<<endl;
+    cout<<"Total amount of ticket sales  = $"<<setw(8)<<total<<endl;
     
     //Exit Stage Right!
     return 0;

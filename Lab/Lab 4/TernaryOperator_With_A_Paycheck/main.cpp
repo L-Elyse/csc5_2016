@@ -7,7 +7,7 @@
 
 //System Libraries
 #include <iostream> //Input/Output Stream Library
-#include <iomanip>  //Formatt Library
+#include <iomanip>  //Format Library
 using namespace std;//Iostream uses the standard namespace
 
 //User Libraries
