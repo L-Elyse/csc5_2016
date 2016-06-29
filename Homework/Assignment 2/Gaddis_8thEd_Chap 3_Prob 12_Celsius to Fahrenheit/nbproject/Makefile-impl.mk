@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Template
+PROJECTNAME=Gaddis_8thEd_Chap 3_Prob 12_Celsius to Fahrenheit
 
 # Active Configuration
 DEFAULTCONF=Debug
