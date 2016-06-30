@@ -8,7 +8,6 @@
 //System Libraries
 #include <iostream> //Input/Output Stream Library
 #include <string>   //Character Input Library
-#include <cmath>    //Math Library
 #include <cstdlib>  //Random Value Library
 #include <ctime>    //Unique Seed Value Library
 using namespace std;//Iostream uses the standard namespace
