@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Template
+PROJECTNAME=Savitch_9thEd_Chap3_Prob6_FibonacciCrud
 
 # Active Configuration
 DEFAULTCONF=Debug
