@@ -22,11 +22,10 @@ using namespace std;//Iostream uses the standard namespace
 //Execution Begins Here!
 int main(int argc, char** argv) {
     //Declare variables, no doubles
-    unsigned num1=time(0), num2=time(0);  //Random numbers to be added together
+    unsigned num1=time(0), num2=time(0);  //Random numbers to be added together set to present time
     unsigned int sum;
     const int MIN=100; //Minimum value to choose from
     const int MAX=999; //Maximum value to choose from
-    
     
     //Input data
     
@@ -34,11 +33,9 @@ int main(int argc, char** argv) {
     //Process data
     srand(num1);
     srand(num2);
-    num1 = (rand()%(MAX-MIN+1)+MIN);
-    num2 = (rand()%(MAX-MIN+1)+MIN);
-    sum=num1+num2;
-    
-    
+    num1 = (rand() % (MAX - MIN + 1) + MIN);
+    num2 = (rand() % (MAX - MIN + 1) + MIN);
+    sum = num1 + num2; 
     
     //Output data
     cout<<"This program helps you add two three-digit numbers together!"<<endl;
