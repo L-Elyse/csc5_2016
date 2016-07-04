@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Gaddis_8thEd_Chap4_Prob23_Geometry Calculator
+PROJECTNAME=Gaddis_8thEd_Chap4_Prob10_DaysinaMonth
 
 # Active Configuration
 DEFAULTCONF=Debug

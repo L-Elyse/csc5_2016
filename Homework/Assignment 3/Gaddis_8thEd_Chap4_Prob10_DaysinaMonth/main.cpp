@@ -65,7 +65,6 @@ int main(int argc, char** argv) {
     if (month==12)
         cout<<"31 days"<<endl;
         
-    cout<<"Error. Please enter a valid numeral month."<<endl;
     
 
     //Exit Stage Right!
