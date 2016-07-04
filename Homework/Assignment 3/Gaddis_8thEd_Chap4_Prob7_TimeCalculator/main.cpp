@@ -7,6 +7,7 @@
 
 //System Libraries
 #include <iostream> //Input/Output Stream Library
+#include <iomanip>  //Format Library
 using namespace std;//Iostream uses the standard namespace
 
 //User Libraries
@@ -18,11 +19,12 @@ using namespace std;//Iostream uses the standard namespace
 //Execution Begins Here!
 int main(int argc, char** argv) {
     //Declare variables, no doubles
-    const int minute=60;
-    const int hour=3600;
-    const int day=86400;
-    unsigned int seconds;
-    
+    int seconds;
+    const float secpmin=60.0;
+    const float secphr=3600.0;
+    const float secpday=86400.0;
+    float minute, hour, day;
+       
     
     //Input data
     cout<<"A program based on seconds."<<endl;
@@ -31,16 +33,17 @@ int main(int argc, char** argv) {
     
     
     //Process data
-    if (seconds>=day){
-        seconds/=86400;
-        cout<<"That is equivalent to about "<<seconds<<" day(s)!"<<endl;
+    cout<<setprecision(3);
+    if (seconds>=secpday){
+        day=seconds/secpday;
+        cout<<"That is equivalent to about "<<day<<" day(s)!"<<endl;
     }
-    else if (seconds>=hour){
-        seconds/=3600;
+    else if (seconds>=secphr&&seconds<secpday){
+        hour=seconds/secphr;
         cout<<"That is equivalent to about "<<seconds<<" hour(s)!"<<endl;
     }
-    else if (seconds>=minute){
-        seconds/=60;
+    else if (seconds>=secpmin&&seconds<secphr){
+        minute=seconds/secpmin;
         cout<<"That is equivalent to about "<<seconds<<" minute(s)!"<<endl;
     }
     else
