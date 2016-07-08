@@ -24,7 +24,7 @@ int main(int argc, char** argv) {
     //Initialize the random number seed
     srand(static_cast<unsigned int>(time(0)));
     //Declare variables, no doubles
-    float apprxPI,nDarts,nInCirc;
+    float apprxPI,nDarts,nInCirc=0;
     float maxRand=pow(2,31)-1;
     float max=-1, min=2;
     
