@@ -29,8 +29,8 @@ int main(int argc, char** argv) {
         for(int times=1;times<=3;times++){
             if(times==3){
                 int temp=bottles-1;
-                nTens=(bottles-bottles%10)/10;
-                nOnes=bottles-nTens*10;
+                nTens=(temp-temp%10)/10;
+                nOnes=temp-nTens*10;
             }
         switch(nTens){
             case 9:cout<<"Ninety ";break;
@@ -70,12 +70,10 @@ int main(int argc, char** argv) {
                     case 9:cout<<"Nine ";break;
                 }
             }
-            if(times==1||times==3)cout<<" bottles of beer on the wall "<<endl;
+            if(times==1||times==3)cout<<"bottles of beer on the wall "<<endl;
             else if (times==2){ 
-                cout<<" bottles of beer"<<endl;
+                cout<<"bottles of beer"<<endl;
                 cout<<" You take one down and pass it around "<<endl;
-            }else{
-                cout<<" bottles of beer on the wall"<<endl;
             }
         }
         cout<<endl;  
