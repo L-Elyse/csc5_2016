@@ -29,18 +29,18 @@ int main(int argc, char** argv) {
           diff,      //True answer to the subtraction problem
           product,   //True answer to the multiplication problem
           quotient;  //True answer to the division probem
-    const int MIN=1; //Minimum value to choose from
-    const int MAX=999; //Maximum value to choose from
+    const int MIN1=1; //Minimum value of number 2
+    const int MAX1=499; //Maximum value to choose number 2
+    const int MIN2=500; //Minimum value of number 1
+    const int MAX2=999; //Maximum value of number 1
   
     
     //Set random number seed
     srand(num1);
     srand(num2);
-    num1 = (rand() % (MAX - MIN + 1) + MIN);
-    num2 = (rand() % (MAX - MIN + 1) + MIN);
+    num1 = (rand() % (MAX2 - MIN2 + 1) + MIN2);
+    num2 = (rand() % (MAX1 - MIN1 + 1) + MIN1);
     
-    //Format Data
-    cout<<showpoint;
     
     //Process the data
     do 
@@ -68,7 +68,7 @@ int main(int argc, char** argv) {
                 case 1:{
                     cout<<"Try this addition: "<<endl;
                     cout<<"  "<<num1<<endl;
-                    cout<<"+ "<<num2<<endl;
+                    cout<<"+ "<<setw(3)<<num2<<endl;
                     cout<<"-----"<<endl;
                     cin>>guess;
                     
@@ -82,10 +82,9 @@ int main(int argc, char** argv) {
                     break;
                 }
                 case 2:{
-                    num1>num2;
                     cout<<"Try this subtraction: "<<endl;
                     cout<<"  "<<num1<<endl;
-                    cout<<"- "<<num2<<endl;
+                    cout<<"- "<<setw(3)<<num2<<endl;
                     cout<<"-----"<<endl;
                     cin>>guess;
                     
@@ -101,7 +100,7 @@ int main(int argc, char** argv) {
                 case 3:{
                     cout<<"Try this multiplication: "<<endl;
                     cout<<"  "<<num1<<endl;
-                    cout<<"x "<<num2<<endl;
+                    cout<<"x "<<setw(3)<<num2<<endl;
                     cout<<"-----"<<endl;
                     cin>>guess;
                     
@@ -117,11 +116,15 @@ int main(int argc, char** argv) {
                 case 4:{
                     cout<<"Try this division: "<<endl;
                     cout<<"  "<<num1<<endl;
-                    cout<<"/ "<<num2<<endl;
+                    cout<<"/ "<<setw(3)<<num2<<endl;
                     cout<<"-----"<<endl;
                     cin>>guess;
                     
-                    quotient=num1/num2;
+                    
+                    quotient=static_cast<float>(num1)/num2;
+                    
+                    //Format Output
+                    cout<<fixed<<setprecision(2)<<showpoint;
                     
                     //Conditional Statement
                     if(guess==quotient)
