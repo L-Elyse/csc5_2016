@@ -28,6 +28,7 @@ int main(int argc, char** argv) {
     do 
     {
         //Display the menu
+        cout<<endl;
         cout<<"Menu Program"<<endl;
         cout<<"This program contains 10 problems solved from Gaddis, ";
         cout<<"8th Edition, Chapter 5."<<endl;
@@ -43,6 +44,7 @@ int main(int argc, char** argv) {
         cout<<"9. Random Number Guessing Game"<<endl;             //Problem #20
         cout<<"10. Random Number Guessing Game Enhancement"<<endl;//Problem #21
         cout<<"11. Quit Program"<<endl;
+        cout<<endl;
         cin>>choice;
         
         //Validate the input
@@ -104,7 +106,7 @@ int main(int argc, char** argv) {
                 case 3:{
                     //Declare variables, no doubles
                     float member=2500;    //Membership per year
-                    const float MEM_FEE=0.04f; //Fee increase on membership
+                    const float memFee=0.04f; //Fee increase on membership
                     int year;
 
                     //Format Data
@@ -113,13 +115,13 @@ int main(int argc, char** argv) {
                     //Process Data and Loop   
                     cout<<"Welcome to the Country Club!"<<endl;
                     cout<<"Today you will pay $"<<member<<endl;
-                    cout<<"However, we intend to increase our rates by "<<MEM_FEE*100;
+                    cout<<"However, we intend to increase our rates by "<<memFee*100;
                     cout<<"% for the next six years."<<endl;
                     cout<<"Here is what you can expect to pay for the next six years:"<<endl;
                     cout<<endl;
 
                     for(year=1;year<=6;year++){
-                        member=(member*MEM_FEE)+member;
+                        member=(member*memFee)+member;
 
                         cout<<"After year "<<year<<" -- ";
                         cout<<"$ "<<member<<endl;
@@ -170,13 +172,11 @@ int main(int argc, char** argv) {
                     int daysWkd;
                     float salary=0.0f;  //Running Total Accumulator for Salary
 
-
                     //Input Data
                     cout<<"This program helps to calculate your salary if your "<<endl;
                     cout<<"pay doubled everyday starting with one penny on day 1."<<endl;
                     cout<<"How many days have you worked?"<<endl;
                     cin>>daysWkd;
-
 
                     //Input Validation
                     while(daysWkd<1){
@@ -218,13 +218,11 @@ int main(int argc, char** argv) {
                     const int MIN2=500; //Minimum value of number 1
                     const int MAX2=999; //Maximum value of number 1
 
-
                     //Set random number seed
                     srand(num1);
                     srand(num2);
                     num1 = (rand() % (MAX2 - MIN2 + 1) + MIN2);
                     num2 = (rand() % (MAX1 - MIN1 + 1) + MIN1);
-
 
                     //Process the data
                     do 
@@ -303,7 +301,6 @@ int main(int argc, char** argv) {
                                     cout<<"/ "<<setw(3)<<num2<<endl;
                                     cout<<"-----"<<endl;
                                     cin>>guess;
-
 
                                     quotient=static_cast<float>(num1)/num2;
 
@@ -486,8 +483,7 @@ int main(int argc, char** argv) {
         }
     } while(choice!=11);
     
-    cout<<"Thanks! Come again!"<<endl;
-    
+    cout<<"Thanks! Come again!"<<endl; 
             
     //Exit Stage Right!
     return 0;
