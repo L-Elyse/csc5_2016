@@ -22,7 +22,7 @@ int main(int argc, char** argv) {
     //Declare variables, no doubles
     char choice;
     int nwins=0,nlosses=0,nwars=0;
-    char number=time(0);  //Random numbers to be added together set to present time
+    int number=time(0);  //Random numbers to be added together set to present time
     int warnum;          //Number of cards to throw before flipping in war
     const int MIN=1;     //Minimum value to choose from--TESTING VALUE ONLY--CHANGE!
     const int MAX=14;    //Maximum value to choose from--TESTING VALUE ONLY--CHANGE!

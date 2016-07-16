@@ -1,8 +1,8 @@
 /* 
  * File:   main.cpp
  * Author: Laurie Guimont
- * Created on July 10, 2016, 8:55 PM
- * Purpose: Random Number Guessing Game (Enhancement)
+ * Created on July 15, 2016, 9:30 PM
+ * Purpose: War Card Game
  */
 
 //System Libraries
@@ -21,10 +21,11 @@ using namespace std;//Iostream uses the standard namespace
 int main(int argc, char** argv) {
     //Declare variables, no doubles
     char choice;
+    int value;
     int nwins=0,nlosses=0,nwars=0;
-    char number=time(0);  //Random numbers to be added together set to present time
+    int number=time(0);  //Random numbers to be added together set to present time
     int warnum;          //Number of cards to throw before flipping in war
-    const int MIN=1;     //Minimum value to choose from--TESTING VALUE ONLY--CHANGE!
+    const int MIN=2;     //Minimum value to choose from--TESTING VALUE ONLY--CHANGE!
     const int MAX=14;    //Maximum value to choose from--TESTING VALUE ONLY--CHANGE!
     
     //Input Data
@@ -43,12 +44,34 @@ int main(int argc, char** argv) {
     srand(number);
     number = (rand() % (MAX - MIN + 1) + MIN);
     
+    switch(choice){ 
+        case 'a':
+        case 'A':value=14;break;
+        case 'k':
+        case 'K':value=13;break;
+        case 'q':
+        case 'Q':value=12;break;
+        case 'j':
+        case 'J':value=11;break;
+        case 't':
+        case 'T':value=10;break;
+        case '9':
+        case '8':
+        case '7':
+        case '6':
+        case '5':
+        case '4':
+        case '3':
+        case '2':value=(choice-48);break;
+        default: cout<<"Invalid option!"<<endl; //this is an issue!
+    }
+    
     //Processing Choice--loop here!
-    if(choice>number){
+    if(value>number){
         nwins+=1;
         cout<<"You won!"<<endl;
         }
-    else if(choice<number){
+    else if(value<number){
         nlosses+=1;
         cout<<"Sorry. You lost."<<endl;
         }
@@ -61,6 +84,7 @@ int main(int argc, char** argv) {
     
     //Game Stats
     cout<<"Computer's card: "<<number<<endl;
+    cout<<"Your score: "<<value<<endl;
     cout<<endl;
     cout<<"Wins:   "<<nwins<<endl;
     cout<<"Losses: "<<nlosses<<endl;
