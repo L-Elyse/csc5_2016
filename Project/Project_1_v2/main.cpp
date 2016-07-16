@@ -1,8 +1,8 @@
 /* 
  * File:   main.cpp
  * Author: Laurie Guimont
- * Created on July 15, 2016, 9:30 PM
- * Purpose: War Card Game
+ * Created on July 10, 2016, 8:55 PM
+ * Purpose: Random Number Guessing Game (Enhancement)
  */
 
 //System Libraries
