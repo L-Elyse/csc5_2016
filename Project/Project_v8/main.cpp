@@ -1,7 +1,7 @@
 /* 
  * File:   main.cpp
  * Author: Laurie Guimont
- * Created on July 16, 2016, 8:45 PM
+ * Created on July 16, 2016, 6:45 PM
  * Purpose: War Card Game
  */
 
