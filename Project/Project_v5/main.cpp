@@ -1,7 +1,7 @@
 /* 
  * File:   main.cpp
  * Author: Laurie Guimont
- * Created on July 16, 2016, 2:45 PM
+ * Created on July 16, 2016, 4:45 PM
  * Purpose: War Card Game
  */
 
@@ -72,10 +72,12 @@ int main(int argc, char** argv) {
         //Determine win, loss, or war
         if(value>number){
             nwins+=1;
+            score=score+value+number;
             cout<<"You won!"<<endl;
             }
         else if(value<number){
             nlosses+=1;
+            score-=value;
             cout<<"Sorry. You lost."<<endl;
             }
         else{
@@ -97,9 +99,7 @@ int main(int argc, char** argv) {
             cout<<"Computer's war card: "<<compwar<<endl;
         }
         
-        //Score Accumulation
-        score+=value;
-        
+                
         //Game Stats
         cout<<"Computer's card: "<<number<<endl;
         cout<<"Your score: "<<score<<endl;
