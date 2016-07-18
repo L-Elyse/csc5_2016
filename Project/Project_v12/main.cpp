@@ -1,7 +1,7 @@
 /* 
  * File:   main.cpp
  * Author: Laurie Guimont
- * Created on July 17, 2016, 2:25 PM
+ * Created on July 18, 2016, 1:30 AM
  * Purpose: War Card Game
  */
 
@@ -33,10 +33,10 @@ int main(int argc, char** argv) {
     int value;           //Value of each card
     const int MIN=2;     //Minimum value to choose from
     const int MAX=14;    //Maximum value to choose from
-    int warcnt;          //Number of faced down cards before flipping one in war
+    int warcnt;          //Number of faced down cards before flipping in war
     int warnum,cwarnum;  //Card choice during war
     unsigned int times;  //for Loop counter
-    int nwins=0,nlosses=0,nwars=0,ngames;
+    unsigned int nwins=0,nlosses=0,nwars=0,ngames;
     int score=0,wrscore=0,cscore=0,cwscore=0;
     float pwins,plosses;
     string winner;
@@ -49,7 +49,7 @@ int main(int argc, char** argv) {
     cout<<"playing against the computer now, did you?"<<endl;
     getline(cin,oppnent);
     
-    cout<<"How many cards do you want to throw down before you flip one?"<<endl;
+    cout<<"How many cards do you want to put down before you flip one?"<<endl;
     cout<<"Please pick a number from 2-4"<<endl;
     cin>>warcnt;
     
@@ -153,11 +153,12 @@ int main(int argc, char** argv) {
                     //Input Validation
                     while(!(warnum)||warnum<MIN||warnum>MAX){ 
                         cin.clear();  
-                        cin.ignore(100,'\n');          
+                        cin.ignore();          
                         cout<<"Invalid input. Please type in an integer";
                         cout<<" between 2 and 14."<<endl;
                         cin>>warnum;
                     }
+                    
                     wrscore+=warnum;
                 }
 
@@ -168,7 +169,7 @@ int main(int argc, char** argv) {
                 //Input Validation    
                 while(!(warnum)||warnum<MIN||warnum>MAX){ 
                     cin.clear();
-                    cin.ignore(100,'\n');          
+                    cin.ignore();          
                     cout<<"Invalid input. Please type in an integer";
                     cout<<" between 2 and 14."<<endl;
                     cin>>warnum;
@@ -207,14 +208,14 @@ int main(int argc, char** argv) {
                             cout<<"Enter card "<<times<<endl;
                             cin>>warnum;
                         
-                        //Input Validation    
-                        while(!(warnum)||warnum<MIN||warnum>MAX){ 
-                            cin.clear();
-                            cin.ignore(100,'\n');          
-                            cout<<"Invalid input. Please type in an integer";
-                            cout<<" between 2 and 14."<<endl;
-                            cin>>warnum;
-                        }
+                            //Input Validation    
+                            while(!(warnum)||warnum<MIN||warnum>MAX){ 
+                                cin.clear();
+                                cin.ignore();          
+                                cout<<"Invalid input. Please type in an";
+                                cout<<" integer between 2 and 14."<<endl;
+                                cin>>warnum;
+                            }
                             
                             wrscore+=warnum;
                         }
@@ -225,8 +226,8 @@ int main(int argc, char** argv) {
                         
                         //Input Validation    
                         while(!(warnum)||warnum<MIN||warnum>MAX){ 
-                            cin.clear();
-                            cin.ignore(100,'\n');          
+                            cin.clear();  //Used to stop infinite loop
+                            cin.ignore();          
                             cout<<"Invalid input. Please type in an integer";
                             cout<<" between 2 and 14."<<endl;
                             cin>>warnum;
@@ -254,8 +255,8 @@ int main(int argc, char** argv) {
                         else if (warnum<cwarnum){
                             nlosses+=1;
                             score=score-value-warnum-wrscore;
-                            cscore=cscore+value+number+cwscore+wrscore+cwarnum+
-                                    warnum;
+                            cscore=cscore+value+number+cwscore+wrscore+
+                                    cwarnum+warnum;
                             cout<<"You lost this battle."<<endl;
                         }
                     }
@@ -288,13 +289,18 @@ int main(int argc, char** argv) {
     out<<"Opponent: "<<oppnent<<endl;
     out<<"Wins:    "<<setw(4)<<nwins<<endl;
     out<<"Losses:  "<<setw(4)<<nlosses<<endl;
+    out<<endl;
+    out<<"Your final score: "<<setw(4)<<score<<endl;
+    out<<oppnent<<"'s final score: "<<setw(4)<<cscore<<endl;
     
+    //Determine Winner of Game
     if(score>cscore)
         winner="You!";
     else
         winner=oppnent;
     out<<"Winner:  "<<winner<<endl;
     
+    //Calculate Number of Games
     ngames=nwins+nlosses;
     out<<"Total games played: "<<ngames<<endl;
     
