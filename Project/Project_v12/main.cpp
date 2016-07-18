@@ -39,6 +39,7 @@ int main(int argc, char** argv) {
     int nwins=0,nlosses=0,nwars=0,ngames;
     int score=0,wrscore=0,cscore=0,cwscore=0;
     float pwins,plosses;
+    string winner;
     ofstream out;
      
     //Open File & Enter Primary Input Data
@@ -287,6 +288,12 @@ int main(int argc, char** argv) {
     out<<"Opponent: "<<oppnent<<endl;
     out<<"Wins:    "<<setw(4)<<nwins<<endl;
     out<<"Losses:  "<<setw(4)<<nlosses<<endl;
+    
+    if(score>cscore)
+        winner="You!";
+    else
+        winner=oppnent;
+    out<<"Winner:  "<<winner<<endl;
     
     ngames=nwins+nlosses;
     out<<"Total games played: "<<ngames<<endl;
