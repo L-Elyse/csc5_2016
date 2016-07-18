@@ -26,7 +26,9 @@ float save6(float,float,int);
 float save7(float,float,int=12);
 void  save8(float &,float,float,int);
 void  save9(float [],float,float,int);
-void display(float [],int);
+void  display(float [],int);
+void  save9(vector<float> &,float,float,int);
+void  display(vector<float> &,int);
 
 //Execution Begins Here!
 int main(int argc, char** argv) {
@@ -34,14 +36,15 @@ int main(int argc, char** argv) {
     float fv,pv,intRate;
     int nComPds;
     float fComPds;
-    const int SIZE=nComPds+1;
-    float fvArry[SIZE];
     
     //Input Data
     pv=100.0f;//Fix the principle in $'s
     intRate=0.06f;//Municipal bond rate risky 6 percent
     nComPds=12;//Number of compounding periods 12 yrs
     fComPds=12;//To show overloading
+    const int SIZE=nComPds+1;
+    float fvArry[SIZE];
+    vector<float>vecFv(SIZE);
     
     //Process the Data
     cout<<fixed<<setprecision(2)<<showpoint;
@@ -60,6 +63,8 @@ int main(int argc, char** argv) {
     cout<<"Reference Parameter F8 = $"<<fv<<endl;
     save9(fvArry,pv,intRate,nComPds);
     display(fvArry,nComPds);
+    save9(vecFV,pv,intRate,nComPds);
+    display(vecFV,nComPds);
     
     //Output the processed Data
     
