@@ -55,7 +55,7 @@ int main(int argc, char** argv) {
     
     //Input Validation
     while(warcnt<2||warcnt>4){
-        cout<<"Please enter 2,3, or 4"<<endl;
+        cout<<"Error. Please enter 2,3, or 4"<<endl;
         cin>>warcnt;
     }
     
@@ -65,7 +65,7 @@ int main(int argc, char** argv) {
         cout<<"What type of card would you like to play?"<<endl;
         cout<<"1. Number Card"<<endl;
         cout<<"2. Face Card (includes 10)"<<endl;
-        cout<<"3. End game"<<endl;
+        cout<<"3. End game"<<endl<<endl;
         cin>>choice;
         
         //Input Validation
