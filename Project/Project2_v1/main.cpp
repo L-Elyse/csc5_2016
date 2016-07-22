@@ -20,6 +20,9 @@ using namespace std;
 //Global Constants
 
 //Function Prototypes
+int facdDwn(int &);
+int MenuOpt(unsigned int &);
+int MenProc(char);
 
 //Execution Begins Here!
 int main(int argc, char** argv) {
@@ -49,30 +52,13 @@ int main(int argc, char** argv) {
     cout<<"playing against the computer now, did you?"<<endl;
     getline(cin,oppnent);
     
-    cout<<"How many cards do you want to put down before you flip one?"<<endl;
-    cout<<"Please pick a number from 2-4"<<endl;
-    cin>>warcnt;
-    
-    //Input Validation
-    while(warcnt<2||warcnt>4){
-        cout<<"Error. Please enter 2,3, or 4"<<endl;
-        cin>>warcnt;
-    }
+    //Establish Number of "Faced Down" Cards for the Game
+    facdDwn(warcnt);
     
     //Process and Output the Data in the Loop
     do{
-        cout<<endl;
-        cout<<"What type of card would you like to play?"<<endl;
-        cout<<"1. Number Card"<<endl;
-        cout<<"2. Face Card (includes 10)"<<endl;
-        cout<<"3. End game"<<endl<<endl;
-        cin>>choice;
-        
-        //Input Validation
-        while(choice<1||choice>3){
-            cout<<"Invalid entry! Please enter an option from the menu"<<endl;
-            cin>>choice;
-        }
+        //Get Menu
+        MenuOpt(choice);
         
         if(choice==1){
             cout<<"Please enter the number of your choice (2-9)"<<endl;
@@ -316,3 +302,32 @@ int main(int argc, char** argv) {
     out.close();
     return 0;
     }
+
+int MenuOpt(unsigned int &option){
+    cout<<endl;
+    cout<<"What type of card would you like to play?"<<endl;
+    cout<<"1. Number Card"<<endl;
+    cout<<"2. Face Card (includes 10)"<<endl;
+    cout<<"3. End game"<<endl<<endl;
+    cin>>option;
+
+    //Input Validation
+    while(option<1||option>3){
+        cout<<"Invalid entry! Please enter an option from the menu"<<endl;
+        cin>>option;
+    }
+    return option;
+}
+
+int facdDwn(int &number){
+    cout<<"How many cards do you want to put down before you flip one?"<<endl;
+    cout<<"Please pick a number from 2-4"<<endl;
+    cin>>number;
+    
+    //Input Validation
+    while(number<2||number>4){
+        cout<<"Error. Please enter 2,3, or 4"<<endl;
+        cin>>number;
+    } 
+    return number;
+}
