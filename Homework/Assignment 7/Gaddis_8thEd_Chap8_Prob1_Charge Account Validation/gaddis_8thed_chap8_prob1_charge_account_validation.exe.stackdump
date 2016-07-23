@@ -1,0 +1,10 @@
+Exception: STATUS_ACCESS_VIOLATION at eip=00401300
+eax=010B3A54 ebx=00402020 ecx=0061CB0C edx=00A96F14 esi=00402068 edi=0061CB88
+ebp=0061CB18 esp=0061CB08 program=C:\Users\User\Desktop\csc5_2016\Homework\Assignment 7\Gaddis_8thEd_Chap8_Prob1_Charge Account Validation\dist\Debug\Cygwin-Windows\gaddis_8thed_chap8_prob1_charge_account_validation.exe, pid 11520, thread main
+cs=0023 ds=002B es=002B fs=0053 gs=002B ss=002B
+Stack trace:
+Frame     Function  Args
+0061CB18  00401300 (0061CB40, 00000012, 00459E7B, 00000001)
+0061CBA8  00401253 (00000001, 0061CBCC, 200280E8, 61007D35)
+0061CD18  61007D9A (00000000, 0061CD74, 61006DC0, 00000000)
+End of stack trace
