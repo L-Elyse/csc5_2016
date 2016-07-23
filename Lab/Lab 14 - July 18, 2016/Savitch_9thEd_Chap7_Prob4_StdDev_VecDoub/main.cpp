@@ -93,7 +93,7 @@ double normal(){
     double sum=0;
     //Add 12 uniformly distributed numbers
     for(int i=1;i<=12;i++){
-        sum+=rand()/static_cast<double>(rand())/MAXRND;//[0,1]
+        sum+=static_cast<double>(rand())/MAXRND;//[0,1]
     }
     //Scale a number[0,12]-6 = [-6,6]
     return sum-6;
