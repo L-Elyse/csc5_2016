@@ -20,7 +20,7 @@ int linSrch(int [],int,int);
 int main(int argc, char** argv) {
     //Declare variables, no doubles
     const int SIZE=10;
-    int lottery[SIZE]={13579, 26791, 26791, 33445, 55555,
+    int lottery[SIZE]={13579, 26791, 26792, 33445, 55555,
                        62483, 77777, 79422, 85647, 93121};
     int index,value;
     
