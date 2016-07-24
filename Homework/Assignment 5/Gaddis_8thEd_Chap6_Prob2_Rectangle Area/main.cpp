@@ -35,24 +35,24 @@ int main(int argc, char** argv) {
     return 0;
 }
 
-void display(float length,float width,float area){
-    cout<<"Area: "<<getArea(length,width,area);
+void display(float l,float w,float a){
+    cout<<"Area: "<<getArea(l,w,a);
     return;
 }
 
-float getArea(float length,float width,float area){
-    area=getLngt(length)*getWdth(width);
-    return area;
+float getArea(float l,float w,float a){
+    a=getLngt(l)*getWdth(w);
+    return a;
 }
 
-float getWdth(float width){
+float getWdth(float w){
     cout<<"Please enter the width"<<endl;
-    cin>>width;
-    return width;
+    cin>>w;
+    return w;
 }
 
-float getLngt(float length){
+float getLngt(float l){
     cout<<"Please input the length"<<endl;
-    cin>>length;
-    return length;
+    cin>>l;
+    return l;
 }

@@ -45,19 +45,19 @@ int main(int argc, char** argv) {
     return 0;
 }
 
-void calcRet(float cost,float percent,float price){
+void calcRet(float c,float perc,float price){
     //Calculate Retail Price
-    price=cost+(cost*convert(percent));
+    price=c+(c*convert(perc));
     
     cout<<fixed<<setprecision(2)<<showpoint;
     cout<<"The retail price is $"<<price<<endl;
     return; 
 }
 
-float convert(float percent){
+float convert(float p){
     //Convert Percent to Decimal
-    percent/=100;
-    return percent;
+    p/=100;
+    return p;
 }
 
 
