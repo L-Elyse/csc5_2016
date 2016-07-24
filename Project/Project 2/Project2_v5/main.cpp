@@ -1,7 +1,7 @@
 /* 
  * File:   main.cpp
  * Author: Laurie Guimont
- * Created on July 23, 2016, 7:00 PM
+ * Created on July 23, 2016, 9:50 PM
  * Purpose: War Card Game Enhancement
  */
 
@@ -21,7 +21,8 @@ using namespace std;
 
 //Function Prototypes
 int facdDwn(int &);
-int menuOpt(unsigned int &);
+unsigned int menuOpt(unsigned int &);
+int pckCard(int, char &);
 int cardVal(char,int &);
 void win(string, int);
 void loss(string, int);
@@ -30,6 +31,8 @@ int sumArry(int [],int,int);
 int warCard(int &,int,int);
 int cwrArry(int [],int,int &,int,int,string);
 int cwrCard(int &,int,int,string);
+int ldrbrd(string [],int [],int);
+
 
 //Execution Begins Here!
 int main(int argc, char** argv) {
@@ -45,7 +48,6 @@ int main(int argc, char** argv) {
     const int MAX=14;    //Maximum value to choose from
     int warcnt;          //Number of faced down cards before flipping in war
     int warnum,cwarnum;  //Card choice during war
-    unsigned int times;  //for Loop counter
     unsigned int nwins=0,nlosses=0,nwars=0,ngames;
     int score=0,wrscore=0,cscore=0,cwscore=0;
     float pwins,plosses;
@@ -64,32 +66,9 @@ int main(int argc, char** argv) {
     
     //Process and Output the Data in the Loop
     do{
-        //Get Menu
+        //Get Menu & Select Card
         menuOpt(choice);
-        
-        if(choice==1){
-            cout<<"Please enter the number of your choice (2-9)"<<endl;
-            cin>>cchoice;
-            
-            //Input Validation
-            while(cchoice<'2'||cchoice>'9'){
-                cout<<"Invalid entry! Please enter (2-9)"<<endl;
-                cin>>cchoice;
-            }
-        }
-        else if(choice==2){
-            cout<<"Please enter T, J, Q, K, or A"<<endl;
-            cin>>cchoice;
-            
-            //Input Validation
-            while(cchoice!='a'&&cchoice!='A'&&cchoice!='k'&&cchoice!='K'&&
-                    cchoice!='q'&&cchoice!='Q'&&cchoice!='j'&&cchoice!='J'&&
-                    cchoice!='t'&&cchoice!='T'){
-                cout<<"Invalid entry! Please enter one of the choices "
-                        "above"<<endl;
-                cin>>cchoice;
-            }
-        }
+        pckCard(choice,cchoice);
         
         //Process the card choice
         if(choice!=3){
@@ -103,13 +82,13 @@ int main(int argc, char** argv) {
                 nwins+=1;
                 score=score+value+number;
                 cscore-=number;
-                win(oppnent,number); //Function Call
+                win(oppnent,number);
             }
             else if(value<number){
                 nlosses+=1;
                 score-=value;
                 cscore=cscore+value+number;
-                loss(oppnent,number); //Function Call
+                loss(oppnent,number);
             }
             else{ 
                 nwars+=1;
@@ -324,7 +303,34 @@ int cardVal(char choice,int &number){
     return number;
 }
 
-int menuOpt(unsigned int &option){
+int pckCard(int menu, char &card){
+    if(menu==1){
+        cout<<"Please enter the number of your choice (2-9)"<<endl;
+        cin>>card;
+
+        //Input Validation
+        while(card<'2'||card>'9'){
+            cout<<"Invalid entry! Please enter (2-9)"<<endl;
+            cin>>card;
+        }
+    }
+    else if(menu==2){
+        cout<<"Please enter T, J, Q, K, or A"<<endl;
+        cin>>card;
+
+        //Input Validation
+        while(card!='a'&&card!='A'&&card!='k'&&card!='K'&&
+                card!='q'&&card!='Q'&&card!='j'&&card!='J'&&
+                card!='t'&&card!='T'){
+            cout<<"Invalid entry! Please enter one of the choices "
+                    "above"<<endl;
+            cin>>card;
+        }
+    }
+    return card;
+}
+
+unsigned int menuOpt(unsigned int &option){
     cout<<endl;
     cout<<"What type of card would you like to play?"<<endl;
     cout<<"1. Number Card"<<endl;
