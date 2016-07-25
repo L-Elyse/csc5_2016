@@ -18,7 +18,8 @@ using namespace std;
 //User Libraries
 
 //Global Constants--ONLY for 2D Array
-const int ROW=5,COL=1;
+const int ROW=5;
+const int COL=1;
 
 //Function Prototypes
 int facdDwn(int &);
@@ -73,7 +74,6 @@ int main(int argc, char** argv) {
         
         //Process the card choice
         if(choice!=3){
-            
             //Call Function & Return Value
             cardVal(cchoice,value);
 
@@ -98,18 +98,15 @@ int main(int argc, char** argv) {
                 int war[SIZE];
                 int cwar[SIZE];
                 
-                //Call Array Function
+                //Player Process
                 wrscore=warArry(war,SIZE,warnum,MIN,MAX);
-                
-                //War Card
                 warCard(warnum,MIN,MAX);  
                 
-                //Comp Array
+                //Comp Process
                 cwscore=cwrArry(cwar,SIZE,cwarnum,MIN,MAX,oppnent);
-                
-                //Opponent's War Card
                 cwrCard(cwarnum,MIN,MAX,oppnent);
 
+                //Compare Cards
                 if(warnum>cwarnum){
                     nwins+=1;
                     score=score+value+number+wrscore+cwscore+warnum+cwarnum;
@@ -129,8 +126,6 @@ int main(int argc, char** argv) {
                         warCard(warnum,MIN,MAX);
                         
                         cwscore=cwrArry(cwar,SIZE,cwarnum,MIN,MAX,oppnent);
-                        
-                        //Computer's War Card
                         cwrCard(cwarnum,MIN,MAX,oppnent);
 
                         if(warnum>cwarnum){
@@ -157,7 +152,7 @@ int main(int argc, char** argv) {
     while(choice!=3);
     
     //End Game
-    cout<<"Thank you for playing!"<<endl;
+    cout<<"Thank you for playing!"<<endl<<endl;
     
     //Show Leaderboard to Screen
     int board[ROW][COL]={{350},
@@ -205,7 +200,7 @@ int main(int argc, char** argv) {
 void ldrbrd(const int a[][COL],int r){
     for(int i=0;i<r;i++){
         for(int j=0;j<COL;j++){
-            cout<<setw(4)<<a[r][COL]<<endl;
+            cout<<"Player "<<i+1<<" : "<<setw(4)<<a[i][j]<<endl;
         }
     }  
 }
