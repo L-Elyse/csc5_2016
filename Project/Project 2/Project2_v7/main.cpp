@@ -1,7 +1,7 @@
 /* 
  * File:   main.cpp
  * Author: Laurie Guimont
- * Created on July 24, 2016, 2:15 PM
+ * Created on July 24, 2016, 11:15 PM
  * Purpose: War Card Game Enhancement
  */
 
@@ -97,12 +97,16 @@ int main(int argc, char** argv) {
                 const int SIZE=warcnt;
                 int war[SIZE];
                 int cwar[SIZE];
+                
                 //Call Array Function
                 wrscore=warArry(war,SIZE,warnum,MIN,MAX);
+                
                 //War Card
-                warCard(warnum,MIN,MAX);                 
+                warCard(warnum,MIN,MAX);  
+                
                 //Comp Array
                 cwscore=cwrArry(cwar,SIZE,cwarnum,MIN,MAX,oppnent);
+                
                 //Opponent's War Card
                 cwrCard(cwarnum,MIN,MAX,oppnent);
 
