@@ -37,7 +37,6 @@ void ldrbrd(const int [][COL],int);
 void sortBrd(int [][COL],int);
 void readldr(char [],int [][COL],int);
 void prntldr(int [][COL],int);
-int  binSrch(int [][COL],int,int);
 
 //Execution Begins Here!
 int main(int argc, char** argv) {
@@ -163,7 +162,8 @@ int main(int argc, char** argv) {
     const int ROW=5;
     int board[ROW][COL];
     
-    cout<<"Warrior Leaderboard"<<endl;
+    cout<<"Leaderboard:"<<endl;
+    cout<<"Top 5 Scores"<<endl;
     readldr("leaderboard.dat",board,ROW);
     sortBrd(board,ROW);
     prntldr(board,ROW);
@@ -178,12 +178,8 @@ int main(int argc, char** argv) {
     out<<oppnent<<"'s final score: "<<setw(4)<<cscore<<endl;
     
     //Determine Winner of Game
-    if(score>cscore){
+    if(score>cscore)
         winner="You!";
-        int bindx=binSrch(board,ROW,score);
-        if(bindx==-1)cout<<"However, you don't qualify for a top score"<<endl;
-        else cout<<"Congratulations! You qualify for a top score!"<<endl;
-    }
     else
         winner=oppnent;
     out<<"Winner:  "<<winner<<endl;
@@ -205,19 +201,6 @@ int main(int argc, char** argv) {
     out.close();
     return 0;
     }
-
-int  binSrch(int a[][COL],int n,int val){
-    //Declare variables
-    int beg=0,end=n-1;
-    //Loop until we find
-    do{
-        int middle=(end+beg)/2;
-        if(a[middle][0]==val)return middle;
-        else if(a[middle][0]<val)beg=middle+1;
-        else end=middle-1;
-    }while(end>=beg);
-    return -1;
-}
 
 void sortBrd(int a[][COL],int r){
     //Declare Variables
@@ -254,7 +237,7 @@ void readldr(char fn[],int a[][COL],int r){
 }
 void prntldr(int a[][COL],int r){
     for(int i=0;i<r;i++){
-        cout<<a[i][0]<<endl;
+        cout<<setw(7)<<a[i][0]<<endl;
     }
 }
 
