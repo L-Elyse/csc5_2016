@@ -2,7 +2,7 @@
  * File:   main.cpp
  * Author: Dr. Mark E. Lehr
  * Created on July 20th, 2016, 6:50 PM
- * Purpose:  Mark Sort in 1 function call
+ * Purpose:  Mark Sort Vector
  */
 
 //System Libraries
@@ -10,6 +10,7 @@
 #include <cstdlib>   //Random
 #include <iomanip>   //Formatting
 #include <ctime>     //Time
+#include <vector>    //Vector
 using namespace std; //Namespace of the System Libraries
 
 //User Libraries
@@ -17,9 +18,9 @@ using namespace std; //Namespace of the System Libraries
 //Global Constants
 
 //Function Prototypes
-void filAray(int [],int);//Ordered Random 4 digit numbers
-void prntAry(int [],int,int);
-void markSrt(int [],int);
+void filAray(vector<int> &);//Ordered Random 4 digit numbers
+void prntAry(vector<int> &,int);
+void markSrt(vector<int> &);
 
 
 //Execution Begins Here!
@@ -29,24 +30,24 @@ int main(int argc, char** argv) {
     
     //Declare Variables
     const int SIZE=100;
-    int array[SIZE];
+    vector<int> array(SIZE);
     
     //Input Data
-    filAray(array,SIZE);
-    prntAry(array,SIZE,10);
+    filAray(array);
+    prntAry(array,10);
     
     //Process the Data
-    markSrt(array,SIZE);
+    markSrt(array);
     
     //Output the processed Data
-    prntAry(array,SIZE,10);
+    prntAry(array,10);
     
     //Exit Stage Right!
     return 0;
 }
-void markSrt(int a[],int n){
-    for(int i=0;i<n-1;i++){
-        for(int j=i+1;j<n;j++){
+void markSrt(vector<int> &a){
+    for(int i=0;i<a.size()-1;i++){
+        for(int j=i+1;j<a.size();j++){
             if(a[i]>a[j]){
                 a[i]=a[i]^a[j];
                 a[j]=a[i]^a[j];
@@ -56,19 +57,19 @@ void markSrt(int a[],int n){
     }
 }
 
-void prntAry(int a[],int n,int perLine){
+void prntAry(vector<int> &a,int perLine){
     cout<<endl;
-    for(int i=0;i<n;i++){
+    for(int i=0;i<a.size();i++){
         cout<<setw(5)<<a[i];
         if(i%perLine==(perLine-1))cout<<endl;
     }
     cout<<endl;
 }
 
-void filAray(int a[],int n){
+void filAray(vector<int> &a){
     //Declare variables
     int step=10;
-    for(int i=0,beg=1000;i<n;i++,beg+=step){
+    for(int i=0,beg=1000;i<a.size();i++,beg+=step){
         a[i]=rand()%90+10;//[10,99]
     }
 }
