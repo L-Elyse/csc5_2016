@@ -31,7 +31,7 @@ int warArry(int [],int,int &,int,int);
 int sumArry(int [],int,int);
 int warCard(int &,int,int);
 int cwrArry(int [],int,int &,int,int,string);
-int cwrCard(int &,int,int,string);
+void cwrCard(int &,int,int,string);
 void stats(string,int,int,int,int,int);
 void ldrbrd(const int [][COL],int);
 void sortBrd(int [][COL],int);
@@ -235,6 +235,7 @@ void readldr(char fn[],int a[][COL],int r){
     //Close the file
     in.close();
 }
+
 void prntldr(int a[][COL],int r){
     for(int i=0;i<r;i++){
         cout<<setw(7)<<a[i][0]<<endl;
@@ -266,7 +267,7 @@ void stats(string name,int x,int y,int win,int loss,int war){
     cout<<"Wars:   "<<setw(3)<<war<<endl;
 }
 
-int cwrCard(int &number,int min,int max,string name){
+void cwrCard(int &number,int min,int max,string name){
     //Opponent's War Card
     number = (rand() % (max - min + 1)) + min;
     cout<<name<<"'s war card: "<<number<<endl;
