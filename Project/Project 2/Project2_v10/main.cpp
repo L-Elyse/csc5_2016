@@ -33,9 +33,8 @@ int warCard(int &,int,int);
 int cwrArry(int [],int,int &,int,int,string);
 void cwrCard(int &,int,int,string);
 void stats(string,int,int,int,int,int);
-void ldrbrd(const int [][COL],int);
-void sortBrd(int [][COL],int);
 void readldr(char [],int [][COL],int);
+void sortBrd(int [][COL],int);
 void prntldr(int [][COL],int);
 void finstat(unsigned int,unsigned int,string,int,int);
 
@@ -253,15 +252,6 @@ void readldr(char fn[],int a[][COL],int r){
 void prntldr(int a[][COL],int r){
     for(int i=0;i<r;i++){
         cout<<setw(7)<<a[i][0]<<endl;
-    }
-    return;
-}
-
-void ldrbrd(const int a[][COL],int r){
-    for(int i=0;i<r;i++){
-        for(int j=0;j<COL;j++){
-            cout<<"Player "<<i+1<<" : "<<setw(4)<<a[i][j]<<endl;
-        }
     }
     return;
 }
